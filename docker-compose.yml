@@ -11,8 +11,8 @@ services:
     # volumes:
     #   - ./docker/mt5/:/root/.wine/drive_c/fx
     environment:
-      - ACCOUNT=
-      - PASSWORD=
-      - SERVER=
+      - ACCOUNT=nghia
+      - PASSWORD=123456
+      - SERVER=nghia
     deploy:
       replicas: 1
