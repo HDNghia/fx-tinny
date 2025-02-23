@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: mt5/Dockerfile
     ports:
-      - "8085"
+      - "8085:8085"
     # volumes:
     #   - ./docker/mt5/:/root/.wine/drive_c/fx
     environment:
