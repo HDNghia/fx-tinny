@@ -19,11 +19,11 @@ services:
     labels:
       - 'traefik.enable=true'
       - 'traefik.docker.network=traefik'
-      - 'traefik.http.routers.nextjs.entrypoints=http'
-      - 'traefik.http.routers.nextjs.rule=Host(`webdn.online`)'
-      - 'traefik.http.routers.nextjs-secure.entrypoints=https'
-      - 'traefik.http.routers.nextjs-secure.rule=Host(`webdn.online`)'
-      - 'traefik.http.routers.nextjs-secure.tls.certresolver=letsencrypt'
+      - 'traefik.http.routers.mt5.entrypoints=http'
+      - 'traefik.http.routers.mt5.rule=Host(`webdn.online`)'
+      - 'traefik.http.routers.mt5-secure.entrypoints=https'
+      - 'traefik.http.routers.mt5-secure.rule=Host(`webdn.online`)'
+      - 'traefik.http.routers.mt5-secure.tls.certresolver=letsencrypt'
 
     networks:
       - traefik  # Kết nối container Next.js với network traefik
