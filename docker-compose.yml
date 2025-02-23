@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: mt5/Dockerfile
     ports:
-      - "8085:8085"
+      - "8085:8080"
     # volumes:
     #   - ./docker/mt5/:/root/.wine/drive_c/fx
     environment:
@@ -22,6 +22,7 @@ services:
       - 'traefik.http.routers.mt5-secure.entrypoints=https'
       - 'traefik.http.routers.mt5-secure.rule=Host(`webdn.online`)'
       - 'traefik.http.routers.mt5-secure.tls.certresolver=letsencrypt'
+      - 'traefik.http.services.mt5.loadbalancer.server.port=8080'
 
     networks:
       - traefik  # Kết nối container Next.js với network traefik
