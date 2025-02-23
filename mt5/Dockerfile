@@ -18,7 +18,7 @@ RUN chmod +x /root/.wine/drive_c/fx/install_and_run_mt5ubuntu.sh
 COPY ./mt5/*.sh ./mt5/*.py /root/.wine/drive_c/fx/
 COPY ./mt5/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-COPY mt5/icmarketssc5setup.exe /root/.wine/drive_c/fx/
+COPY mt5/mt5setup.exe /root/.wine/drive_c/fx/
 
 RUN xvfb-run bash /root/.wine/drive_c/fx/install_and_run_mt5ubuntu.sh || true
 
