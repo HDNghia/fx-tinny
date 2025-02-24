@@ -1,7 +1,7 @@
 FROM msjpq/wine-vnc:bionic
 
 # Set the working directory where Wine expects Windows files
-WORKDIR /root/.wine/drive_c/
+# WORKDIR /root/.wine/drive_c/
 
 # Install necessary packages
 # RUN apt-get update && \
@@ -11,10 +11,10 @@ WORKDIR /root/.wine/drive_c/
 #     rm -rf /var/lib/apt/lists/*
 
 # Set Wine environment variables, including DISPLAY for Xvfb
-ENV WINEPREFIX=/root/.wine \
-    WINEDLLOVERRIDES="mscoree=" \
-    WINEARCH=win64 \
-    DISPLAY=:0
+# ENV WINEPREFIX=/root/.wine \
+#     WINEDLLOVERRIDES="mscoree=" \
+#     WINEARCH=win64 \
+#     DISPLAY=:0
 
 # # Copy and run install_python.sh inside a virtual X server
 # COPY ./mt5/install_python.sh /root/.wine/drive_c/
