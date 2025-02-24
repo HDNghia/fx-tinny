@@ -1,9 +1,13 @@
 services:
   mt5:
+    image: asc686f61/fx-mt5:test
+    build:
+      context: .
+      dockerfile: mt5/Dockerfile
     ports:
       - "8080:8080"
-    volumes:
-      - ./docker/mt5/:/root/.wine/drive_c/fx
+    # volumes:
+    #   - ./docker/mt5/:/root/.wine/drive_c/fx
     environment:
       - ACCOUNT=nghia
       - PASSWORD=123456
