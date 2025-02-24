@@ -4,11 +4,11 @@ FROM msjpq/wine-vnc:bionic
 WORKDIR /root/.wine/drive_c/
 
 # Install necessary packages
-RUN apt-get update && \
-    apt-get install -y sudo supervisor git wget software-properties-common xvfb curl && \
-    apt-get remove -y winbind && \
-    apt-get install -y winbind && \
-    rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && \
+#     apt-get install -y sudo supervisor git wget software-properties-common xvfb curl && \
+#     apt-get remove -y winbind && \
+#     apt-get install -y winbind && \
+#     rm -rf /var/lib/apt/lists/*
 
 # Set Wine environment variables, including DISPLAY for Xvfb
 ENV WINEPREFIX=/root/.wine \
