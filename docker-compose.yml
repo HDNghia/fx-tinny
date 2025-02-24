@@ -1,6 +1,6 @@
 services:
   mt5:
-    image: asc686f61/fx-mt5:test
+    image: asc686f61/fx-mt5:20241116
     build:
       context: .
       dockerfile: mt5/Dockerfile
