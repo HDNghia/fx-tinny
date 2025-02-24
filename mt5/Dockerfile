@@ -1,16 +1,16 @@
 FROM msjpq/wine-vnc:bionic
 
-Set the working directory where Wine expects Windows files
+#Set the working directory where Wine expects Windows files
 WORKDIR /root/.wine/drive_c/
 
-Install necessary packages
+#Install necessary packages
 RUN apt-get update && \
     apt-get install -y sudo supervisor git wget software-properties-common xvfb curl && \
     apt-get remove -y winbind && \
     apt-get install -y winbind && \
     rm -rf /var/lib/apt/lists/*
 
-Set Wine environment variables, including DISPLAY for Xvfb
+#Set Wine environment variables, including DISPLAY for Xvfb
 ENV WINEPREFIX=/root/.wine \
     WINEDLLOVERRIDES="mscoree=" \
     WINEARCH=win64 \
@@ -39,5 +39,5 @@ RUN xvfb-run wine /root/.wine/drive_c/fx/mt5.exe /silent || true
 RUN touch /root/.wine/.update-timestamp && \
     echo 'disable' > $WINEPREFIX/.update-timestamp
 
-Start supervisord to manage your processes
+#Start supervisord to manage your processes
 CMD ["/usr/bin/supervisord"]
