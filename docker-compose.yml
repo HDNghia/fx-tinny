@@ -1,6 +1,5 @@
 services:
   mt5:
-    image: asc686f61/fx-mt5:test
     ports:
       - "8080:8080"
     volumes:
