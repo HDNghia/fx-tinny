@@ -40,4 +40,4 @@ ENV WINEPREFIX=/root/.wine \
 #     echo 'disable' > $WINEPREFIX/.update-timestamp
 
 # Start supervisord to manage your processes
-CMD ["/usr/bin/supervisord"]
+# CMD ["/usr/bin/supervisord"]
