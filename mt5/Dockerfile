@@ -1,4 +1,4 @@
-FROM msjpq/wine-vnc:bionic
+# FROM msjpq/wine-vnc:bionic
 
 # Set the working directory where Wine expects Windows files
 # WORKDIR /root/.wine/drive_c/
