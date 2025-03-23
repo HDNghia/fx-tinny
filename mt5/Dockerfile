@@ -18,8 +18,11 @@ RUN chmod +x /root/.wine/drive_c/fx/install_and_run_mt5ubuntu.sh
 COPY ./mt5/*.sh ./mt5/*.py /root/.wine/drive_c/fx/
 COPY ./mt5/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-COPY mt5/icmarketssc5setup.exe /root/.wine/drive_c/fx/
+# Replace IC Markets setup with Exness MetaTrader 5 setup file
+# Download the Exness MetaTrader 5 setup file if not already available
+COPY mt5/exness5setup.exe /root/.wine/drive_c/fx/
 
+# Run the installation of MetaTrader 5 Exness
 RUN xvfb-run bash /root/.wine/drive_c/fx/install_and_run_mt5ubuntu.sh || true
 
 RUN touch /root/.wine/.update-timestamp

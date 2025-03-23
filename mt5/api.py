@@ -30,11 +30,11 @@ while True:
         import time
         time.sleep(5)
 
-path="/root/.wine/drive_c/Program Files/MetaTrader 5 IC Markets Global/terminal64.exe"
+path = "/root/.wine/drive_c/Program Files/MetaTrader 5 Exness/terminal64.exe"
 
 while not os.path.exists(path):
     logging.warning(f"Waiting for file: {path}")
-    time.sleep(5)  # Đợi 5 giây trước khi kiểm tra lại
+    time.sleep(5)  # Wait 5 seconds before checking again
 
  
 tf_dic = {}
@@ -150,10 +150,10 @@ def deals_all(inp: GetLastDealsHistoryRequest):
 
 @app.get("/account/login")
 def account_login():
-    success = mt5.initialize(path="/config/.winecfg_mt5/drive_c/Program Files/MetaTrader 5 IC Markets Global/terminal64.exe",
+    success = mt5.initialize(path="/config/.winecfg_mt5/drive_c/Program Files/MetaTrader 5 Exness/terminal64.exe",
                              login=int(os.environ['ACCOUNT']),
                              password=os.environ['PASSWORD'],
-                             server=os.environ['SERVER'])
+                             server=os.environ['SERVER'])   
     if not success:
         return {"success":   success,
                 "last_error": mt5.last_error()}
